@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
 
     public Vector3 Checkpoint;
 
-    //private Animator m_animator;
+    private Animator m_animator;
     private Rigidbody m_rigidBody;
 
     private float m_currentV = 0;
@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
     //Set our animator and rigidbody
     private void Start()
     {
-        //m_animator = GetComponent<Animator>();
+        m_animator = GetComponent<Animator>();
         m_rigidBody = GetComponent<Rigidbody>();
     }
 
@@ -86,7 +86,7 @@ public class PlayerController : MonoBehaviour
     //Called every frame
     void Update()
     {
-        //m_animator.SetBool("Grounded", m_isGrounded);
+        m_animator.SetBool("Grounded", m_isGrounded);
         Move();
         m_wasGrounded = m_isGrounded;
 
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.LookRotation(m_currentDirection);
             transform.position += m_currentDirection * m_moveSpeed * Time.deltaTime;
 
-            //m_animator.SetFloat("MoveSpeed", direction.magnitude);
+            m_animator.SetFloat("MoveSpeed", direction.magnitude);
         }
 
         JumpingAndLanding();
@@ -146,7 +146,7 @@ public class PlayerController : MonoBehaviour
 
         if (!m_isGrounded && m_wasGrounded)
         {
-            //m_animator.SetTrigger("Jump");
+            m_animator.SetTrigger("Jump");
         }
     }
 }

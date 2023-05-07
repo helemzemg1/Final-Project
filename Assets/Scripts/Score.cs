@@ -13,11 +13,13 @@ public class Score : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (!collision.gameObject.CompareTag("Player")) 
+        if (!collision.gameObject.CompareTag("Player"))
+        {
             collision.gameObject.SetActive(false);
-        scoreNum++;
-        scoreText.text = scoreNum.ToString();
-        CheckForGameOver();
+            scoreNum++;
+            scoreText.text = scoreNum.ToString();
+            CheckForGameOver();
+        }
     }
 
     private void CheckForGameOver()

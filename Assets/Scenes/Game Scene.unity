@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46998956501b46e4e9f4262d7b04f697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreToWin: 4
+  scoreToWin: 5
   gameOverPanel: {fileID: 1436686801}
   scoreText: {fileID: 894295126}
 --- !u!1 &243821753
